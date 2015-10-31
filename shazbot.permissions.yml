@@ -1,0 +1,15 @@
+add shazbot issue entities:
+  title: 'Create new Shazbot issue entities'
+
+administer shazbot issue entities:
+  title: 'Administer Shazbot issue entities'
+  description: 'Allow to access the administration form to configure Shazbot issue entities.'
+
+delete shazbot issue entities:
+  title: 'Delete Shazbot issue entities'
+
+edit shazbot issue entities:
+  title: 'Edit Shazbot issue entities'
+
+view shazbot issue entities:
+  title: 'View Shazbot issue entities'

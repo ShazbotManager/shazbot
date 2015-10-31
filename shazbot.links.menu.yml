@@ -1,0 +1,12 @@
+# Shazbot issue menu items definition
+entity.shazbot_issue.collection:
+  title: 'Shazbot issue list'
+  route_name: entity.shazbot_issue.collection
+  description: 'List Shazbot issue entities'
+
+shazbot_issue.admin.structure.settings:
+  title: Shazbot issue settings
+  description: 'Configure Shazbot issue entities'
+  route_name: shazbot_issue.settings
+  parent: system.admin_structure
+

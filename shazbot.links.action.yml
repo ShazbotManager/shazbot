@@ -1,0 +1,7 @@
+entity.shazbot_issue.add_form:
+  route_name: entity.shazbot_issue.add_form
+  title: 'Add Shazbot issue'
+  appears_on:
+    - entity.shazbot_issue.collection
+    - entity.shazbot_issue.canonical
+

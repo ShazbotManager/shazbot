@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains shazbot.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function shazbot_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the shazbot module.
+    case 'help.page.shazbot':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('The Shazbot Manager Experience') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function shazbot_theme() {
+  $theme = [];
+
+  return $theme;
+}
