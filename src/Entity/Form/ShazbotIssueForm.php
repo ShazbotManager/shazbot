@@ -28,7 +28,7 @@ class ShazbotIssueForm extends ContentEntityForm {
     $form['langcode'] = array(
       '#title' => $this->t('Language'),
       '#type' => 'language_select',
-      '#default_value' => $entity->getUntranslated()->language()->getId(),
+      '#default_value' => $entity->langcode->value,
       '#languages' => Language::STATE_ALL,
     );
 
