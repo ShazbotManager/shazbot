@@ -19,12 +19,14 @@ use Drupal\Core\Url;
  */
 class ShazbotIssueListBuilder extends EntityListBuilder {
   use LinkGeneratorTrait;
+
   /**
    * {@inheritdoc}
    */
   public function buildHeader() {
     $header['id'] = $this->t('Shazbot issue ID');
     $header['name'] = $this->t('Name');
+
     return $header + parent::buildHeader();
   }
 
@@ -37,11 +39,12 @@ class ShazbotIssueListBuilder extends EntityListBuilder {
     $row['name'] = $this->l(
       $this->getLabel($entity),
       new Url(
-        'entity.shazbot_issue.edit_form', array(
+        'entity.shazbot_issue.edit_form', [
           'shazbot_issue' => $entity->id(),
-        )
+        ]
       )
     );
+
     return $row + parent::buildRow($entity);
   }
 

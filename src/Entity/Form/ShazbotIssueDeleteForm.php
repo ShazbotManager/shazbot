@@ -21,7 +21,7 @@ class ShazbotIssueDeleteForm extends ContentEntityConfirmFormBase {
    * {@inheritdoc}
    */
   public function getQuestion() {
-    return $this->t('Are you sure you want to delete entity %name?', array('%name' => $this->entity->label()));
+    return $this->t('Are you sure you want to delete entity %name?', ['%name' => $this->entity->label()]);
   }
 
   /**
@@ -47,10 +47,10 @@ class ShazbotIssueDeleteForm extends ContentEntityConfirmFormBase {
     drupal_set_message(
       $this->t('content @type: deleted @label.',
         [
-          '@type' => $this->entity->bundle(),
-          '@label' => $this->entity->label()
+          '@type'  => $this->entity->bundle(),
+          '@label' => $this->entity->label(),
         ]
-        )
+      )
     );
 
     $form_state->setRedirectUrl($this->getCancelUrl());

@@ -25,24 +25,14 @@ class ShazbotIssueForm extends ContentEntityForm {
     $form = parent::buildForm($form, $form_state);
     $entity = $this->entity;
 
-    $form['langcode'] = array(
-      '#title' => $this->t('Language'),
-      '#type' => 'language_select',
+    $form['langcode'] = [
+      '#title'         => $this->t('Language'),
+      '#type'          => 'language_select',
       '#default_value' => $entity->langcode->value,
-      '#languages' => Language::STATE_ALL,
-    );
+      '#languages'     => Language::STATE_ALL,
+    ];
 
     return $form;
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function submit(array $form, FormStateInterface $form_state) {
-    // Build the entity object from the submitted values.
-    $entity = parent::submit($form, $form_state);
-
-    return $entity;
   }
 
   /**
@@ -65,6 +55,16 @@ class ShazbotIssueForm extends ContentEntityForm {
         ]));
     }
     $form_state->setRedirect('entity.shazbot_issue.edit_form', ['shazbot_issue' => $entity->id()]);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function submit(array $form, FormStateInterface $form_state) {
+    // Build the entity object from the submitted values.
+    $entity = parent::submit($form, $form_state);
+
+    return $entity;
   }
 
 }

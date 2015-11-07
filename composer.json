@@ -2,7 +2,9 @@
   "name": "drupal/shazbot",
   "type": "drupal-module",
   "description": "The Shazbot Manager Experience",
-  "keywords": ["Drupal"],
+  "keywords": [
+    "Drupal"
+  ],
   "license": "GPL-2.0+",
   "homepage": "https://github.com/ShazbotManager",
   "minimum-stability": "dev",
@@ -10,5 +12,5 @@
     "issues": "https://github.com/ShazbotManager/shazbot/issues",
     "source": "https://github.com/ShazbotManager/shazbot"
   },
-  "require": { }
+  "require": {}
 }

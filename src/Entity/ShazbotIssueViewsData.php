@@ -20,11 +20,11 @@ class ShazbotIssueViewsData extends EntityViewsData implements EntityViewsDataIn
   public function getViewsData() {
     $data = parent::getViewsData();
 
-    $data['shazbot_issue']['table']['base'] = array(
+    $data['shazbot_issue']['table']['base'] = [
       'field' => 'id',
       'title' => $this->t('Shazbot issue'),
-      'help' => $this->t('The Shazbot issue ID.'),
-    );
+      'help'  => $this->t('The Shazbot issue ID.'),
+    ];
 
     return $data;
   }
