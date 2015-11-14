@@ -69,7 +69,7 @@ class ShazbotEntityBase extends ContentEntityBase {
       ])
       ->setDefaultValue('')
       ->setDisplayOptions('view', [
-        'label'  => 'above',
+        'label'  => 'hidden',
         'type'   => 'string',
         'weight' => -4,
       ])

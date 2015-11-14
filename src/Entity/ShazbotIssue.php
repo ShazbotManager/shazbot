@@ -7,14 +7,12 @@
 
 namespace Drupal\shazbot\Entity;
 
-use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityChangedTrait;
 use Drupal\Core\Entity\EntityStorageInterface;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\shazbot\ShazbotEntityItemBase;
 use Drupal\shazbot\ShazbotIssueInterface;
-use Drupal\user\UserInterface;
 
 /**
  * Defines the Shazbot issue entity.
@@ -45,9 +43,9 @@ use Drupal\user\UserInterface;
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "canonical" = "/admin/shazbot_issue/{shazbot_issue}",
- *     "edit-form" = "/admin/shazbot_issue/{shazbot_issue}/edit",
- *     "delete-form" = "/admin/shazbot_issue/{shazbot_issue}/delete"
+ *     "canonical" = "/issue/{shazbot_issue}",
+ *     "edit-form" = "/issue/{shazbot_issue}/edit",
+ *     "delete-form" = "/issue/{shazbot_issue}/delete"
  *   },
  *   field_ui_base_route = "shazbot_issue.settings"
  * )
@@ -68,6 +66,24 @@ class ShazbotIssue extends ShazbotEntityItemBase implements ShazbotIssueInterfac
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type) {
     $fields = parent::baseFieldDefinitions($entity_type);
+
+    $fields['content'] = BaseFieldDefinition::create('string_long')
+      ->setLabel(t('Content'))
+      ->setDescription(t('Issue content.'))
+      ->setRevisionable(TRUE)
+      ->setDefaultValue('')
+      ->setDisplayOptions('view', [
+        'label'  => 'hidden',
+        'type'   => 'text_default',
+        'weight' => 25,
+      ])
+      ->setDisplayOptions('form', [
+        'type'     => 'string_textarea',
+        'weight'   => 25,
+        'settings' => [
+          'rows' => 10,
+        ],
+      ]);
 
     return $fields;
   }

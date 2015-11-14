@@ -1,54 +1,44 @@
 
 # ShazbotIssue routing definition
 entity.shazbot_issue.canonical:
-  path: '/admin/shazbot_issue/{shazbot_issue}'
+  path: '/issue/{shazbot_issue}'
   defaults:
     _entity_view: 'shazbot_issue'
     _title: 'Shazbot issue'
   requirements:
     _entity_access: 'shazbot_issue.view'
-  options:
-    _admin_route: TRUE
 
 entity.shazbot_issue.collection:
-  path: '/admin/shazbot_issue'
+  path: '/issues'
   defaults:
     _entity_list: 'shazbot_issue'
     _title: 'Shazbot issue list'
   requirements:
     _permission: 'view shazbot issue entities'
-  options:
-    _admin_route: TRUE
 
 entity.shazbot_issue.add_form:
-  path: '/admin/shazbot_issue/add'
+  path: '/issue/add'
   defaults:
     _entity_form: shazbot_issue.add
     _title: 'Add Shazbot issue'
   requirements:
     _permission: 'add shazbot issue entities'
-  options:
-    _admin_route: TRUE
 
 entity.shazbot_issue.edit_form:
-  path: '/admin/shazbot_issue/{shazbot_issue}/edit'
+  path: '/issue/{shazbot_issue}/edit'
   defaults:
     _entity_form: shazbot_issue.edit
     _title: 'Edit Shazbot issue'
   requirements:
     _permission: 'edit shazbot issue entities'
-  options:
-    _admin_route: TRUE
 
 entity.shazbot_issue.delete_form:
-  path: '/admin/shazbot_issue/{shazbot_issue}/delete'
+  path: '/issue/{shazbot_issue}/delete'
   defaults:
     _entity_form: shazbot_issue.delete
     _title: 'Delete Shazbot issue'
   requirements:
     _permission: 'delete shazbot issue entities'
-  options:
-    _admin_route: TRUE
 
 shazbot_issue.settings:
   path: 'admin/structure/shazbot_issue'
