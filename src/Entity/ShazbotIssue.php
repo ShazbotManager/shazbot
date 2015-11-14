@@ -33,10 +33,10 @@ use Drupal\shazbot\ShazbotIssueInterface;
  *       "edit" = "Drupal\shazbot\Entity\Form\ShazbotIssueForm",
  *       "delete" = "Drupal\shazbot\Entity\Form\ShazbotIssueDeleteForm",
  *     },
- *     "access" = "Drupal\shazbot\ShazbotIssueAccessControlHandler",
+ *     "access" = "Drupal\shazbot\ShazbotAccessControlHandler",
  *   },
  *   base_table = "shazbot_issue",
- *   admin_permission = "administer ShazbotIssue entity",
+ *   admin_permission = "administer Shazbot manager",
  *   entity_keys = {
  *     "id" = "id",
  *     "label" = "name",

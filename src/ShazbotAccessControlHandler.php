@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains Drupal\shazbot\ShazbotIssueAccessControlHandler.
+ * Contains Drupal\shazbot\ShazbotAccessControlHandler.
  */
 
 namespace Drupal\shazbot;
@@ -13,11 +13,11 @@ use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Session\AccountInterface;
 
 /**
- * Access controller for the Shazbot issue entity.
+ * Access controller for the Shazbot entities.
  *
  * @see \Drupal\shazbot\Entity\ShazbotIssue.
  */
-class ShazbotIssueAccessControlHandler extends EntityAccessControlHandler {
+class ShazbotAccessControlHandler extends EntityAccessControlHandler {
   /**
    * {@inheritdoc}
    */
@@ -25,13 +25,13 @@ class ShazbotIssueAccessControlHandler extends EntityAccessControlHandler {
 
     switch ($operation) {
       case 'view':
-        return AccessResult::allowedIfHasPermission($account, 'view shazbot issue entities');
+        return AccessResult::allowedIfHasPermission($account, 'view shazbot entities');
 
       case 'update':
-        return AccessResult::allowedIfHasPermission($account, 'edit shazbot issue entities');
+        return AccessResult::allowedIfHasPermission($account, 'edit shazbot entities');
 
       case 'delete':
-        return AccessResult::allowedIfHasPermission($account, 'delete shazbot issue entities');
+        return AccessResult::allowedIfHasPermission($account, 'edit shazbot entities');
     }
 
     return AccessResult::allowed();
@@ -41,7 +41,7 @@ class ShazbotIssueAccessControlHandler extends EntityAccessControlHandler {
    * {@inheritdoc}
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
-    return AccessResult::allowedIfHasPermission($account, 'add shazbot issue entities');
+    return AccessResult::allowedIfHasPermission($account, 'edit shazbot entities');
   }
 
 }
